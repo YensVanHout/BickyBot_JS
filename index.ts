@@ -9,7 +9,7 @@ const client = new DiscordJS.Client({
 client.on("ready", () => {
   console.log("bot is up and running");
 
-  const guildId = "952899403436404736";
+  const guildId = "948213338150694932";
   const guild = client.guilds.cache.get(guildId);
 
   let commands;
@@ -32,6 +32,11 @@ client.on("ready", () => {
         type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
       },
     ],
+  });
+
+  commands?.create({
+    name: "test",
+    description: "test the bot",
   });
 });
 
@@ -60,6 +65,13 @@ client.on("interactionCreate", async (interaction) => {
         ephemeral: true,
       });
     }
+  }
+
+  if (commandName === "test") {
+    interaction.reply({
+      content: "test",
+      ephemeral: true,
+    });
   }
 });
 
