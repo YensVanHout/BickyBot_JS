@@ -25,7 +25,7 @@ client.on("ready", () => {
   if (guild) {
     commands = guild.commands;
   } else {
-    commands = client.application?.commands;
+    commands = client.application?.commands
   }
 
   commands?.create({
@@ -40,12 +40,12 @@ client.on("ready", () => {
         type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
       },
     ],
-  });
+  })
 
   commands?.create({
     name: "test",
     description: "test the bot",
-  });
+  })
 });
 
 client.on("interactionCreate", async (interaction) => {
@@ -61,7 +61,7 @@ client.on("interactionCreate", async (interaction) => {
     if (param === "help") {
       interaction.reply({
         content:
-          "Bicky Bot ondersteunt momenteel de volgende commands:\n`!bb help`: Haal alle huidige commands op. (dit bericht)\n`!bb socials`: Krijg de huidige social media links van Bickychips.",
+          "Bicky Bot ondersteunt momenteel de volgende commands:\n`/bb help`: Haal alle huidige commands op. (dit bericht)\n`/bb socials`: Krijg de huidige social media links van Bickychips.",
         ephemeral: true,
       });
     }
@@ -91,4 +91,4 @@ client.on("messageCreate", (message) => {
   }
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env['TOKEN']);
