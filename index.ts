@@ -1,6 +1,14 @@
 import DiscordJS, { Intents, Message } from "discord.js";
-import dotenv from "dotenv";
-dotenv.config();
+
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.get("/", (req: any, res: any) => res.send("Hello World!"));
+
+app.listen(port, () =>
+  console.log(`Example app listening at http://localhost:${port}`)
+);
 
 const client = new DiscordJS.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
