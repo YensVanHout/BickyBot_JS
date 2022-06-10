@@ -1,6 +1,6 @@
 {
   "name": "bickybot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@replit/database": "^2.0.2",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
