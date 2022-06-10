@@ -1,4 +1,6 @@
-import DiscordJS, { Intents, Message } from "discord.js";
+import DiscordJS, { Intents } from "discord.js";
+
+import { getQuote } from "./quotes";
 
 const express = require("express");
 const app = express();
@@ -25,7 +27,7 @@ client.on("ready", () => {
   if (guild) {
     commands = guild.commands;
   } else {
-    commands = client.application?.commands
+    commands = client.application?.commands;
   }
 
   commands?.create({
@@ -40,12 +42,12 @@ client.on("ready", () => {
         type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
       },
     ],
-  })
+  });
 
   commands?.create({
     name: "test",
     description: "test the bot",
-  })
+  });
 });
 
 client.on("interactionCreate", async (interaction) => {
@@ -73,6 +75,13 @@ client.on("interactionCreate", async (interaction) => {
         ephemeral: true,
       });
     }
+
+    if (param === "quote") {
+      interaction.reply({
+        content: getQuote(),
+        ephemeral: true,
+      });
+    }
   }
 
   if (commandName === "test") {
@@ -91,4 +100,4 @@ client.on("messageCreate", (message) => {
   }
 });
 
-client.login(process.env['TOKEN']);
+client.login(process.env["TOKEN"]);
