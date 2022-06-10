@@ -79,7 +79,6 @@ client.on("interactionCreate", async (interaction) => {
     if (param === "quote") {
       interaction.reply({
         content: getQuote(),
-        ephemeral: true,
       });
     }
   }
