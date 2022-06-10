@@ -1,21 +1,25 @@
 {
   "name": "bickybot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "local": "nodemon local.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.8.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "mongoose": "^6.3.6",
     "node": "^17.7.2",
     "nodemon": "^2.0.16",
     "ts-node": "^10.8.1",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "wokcommands": "^1.5.3"
   }
 }
