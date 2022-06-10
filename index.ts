@@ -21,7 +21,7 @@ client.on("ready", () => {
 
   const guildId = "948213338150694932";
   const guild = client.guilds.cache.get(guildId);
-
+  
   let commands;
 
   if (guild) {
@@ -82,13 +82,7 @@ client.on("interactionCreate", async (interaction) => {
       });
     }
   }
-
-  if (commandName === "test") {
-    interaction.reply({
-      content: "test",
-      ephemeral: true,
-    });
-  }
+  
 });
 
 client.on("messageCreate", (message) => {
