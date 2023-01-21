@@ -3,8 +3,6 @@ import DiscordJS, { Intents } from "discord.js";
 import WOKCommands from "wokcommands";
 import path from "path";
 
-//import mongoose from "mongoose";
-
 const express = require("express");
 const app = express();
 const port = 3000;
