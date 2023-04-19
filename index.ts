@@ -26,7 +26,6 @@ client.on("ready", async () => {
     typeScript: true,
     testServers: ["948213338150694932"],
     botOwners: ["155784814551629826"],
-    //mongoUri: process.env["MONGODB"],
   })
     .setDefaultPrefix("!")
     .setDisplayName("Bicky Bot");
